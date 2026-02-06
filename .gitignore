@@ -1,0 +1,37 @@
+# --- Dependencies ---
+# These are large and can be reinstalled using setup.bat
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# --- Sensitive Input Data (PII) ---
+# Prevents actual customer data from being uploaded
+*.xlsx
+*.xls
+*.csv
+!data_template.xlsx
+
+# --- Generated Request Files ---
+# The bulk JSONs created by the Python generator
+/1-generator/*.json
+requests.json
+
+# --- Archived & Active Responses ---
+# The API responses captured by the Node server
+all_approved_results.json
+all_failed_results.json
+/2-archiver/archive/
+/2-archiver/*.json
+
+# --- Final Reports ---
+# The reconciled Excel files
+/output/
+*_matched_results.xlsx
+
+# --- OS & IDE Specific ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
