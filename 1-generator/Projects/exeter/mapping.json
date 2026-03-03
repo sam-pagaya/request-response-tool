@@ -1,0 +1,33 @@
+{
+    "dynamic": {
+        "{{first_name}}": "first_name",
+        "{{last_name}}": "last_name",
+        "{{city}}": "city",
+        "{{zip}}": "zip",
+        "{{state}}": "state",
+        "{{dob}}": "dob",
+        "{{address}}": "full_address",
+        "{{ssn}}": "ssn"
+    },
+    "dynamic_co_applicant": {
+        "{{co_first_name}}": "first_name",
+        "{{co_last_name}}": "last_name",
+        "{{co_city}}": "city",
+        "{{co_zip}}": "zip",
+        "{{co_state}}": "state",
+        "{{co_dob}}": "dob",
+        "{{co_address}}": "full_address",
+        "{{co_ssn}}": "ssn"
+    },
+    "randomized": {
+        "{{income_amount}}": { "type": "int", "range": [50000, 200000] },
+        "{{co_applicant_income_amount}}": { "type": "int", "range": [50000, 200000] },
+        "{{partner_app_id}}": { "type": "string_digits", "length": 8 },
+        "{{requested_loan_amount}}": { "type": "int", "range": [7500, 55000] },
+        "{{requested_term_amount}}": { "type": "int", "range": [36, 84] },
+        "{{year}}": { "type": "int", "range": [2015, 2025] },
+        "{{mileage}}": { "type": "int", "range": [740, 120000] },
+        "{{wholesale_value}}": { "type": "int", "range": [15916, 100000] },
+        "{{interest_rate}}": { "type": "float", "range": [11.99, 29.99] }
+    }
+}

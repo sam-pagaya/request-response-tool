@@ -1,0 +1,21 @@
+{
+    "dynamic": {
+      "{{first_name}}": "first_name",
+      "{{last_name}}": "last_name",
+      "{{city}}": "city",
+      "{{zip}}": "zip",
+      "{{state}}": "state",
+      "{{dob}}": "dob",
+      "{{address}}": "full_address"
+    },
+    "randomized": {
+      "{{income_amount}}": { "type": "int", "range": [50000, 200000] },
+      "{{loan_amount}}": { "type": "int", "range": [2000, 25000] },
+      "{{term}}": { "type": "choice", "options": [36, 48, 60] },
+      "{{partner_app_id}}": { "type": "string_digits", "length": 8 },
+      "{{random_asset}}": { 
+        "type": "choice", 
+        "options": ["personal_loan", "auto", "revolving_debt", "other"] 
+      }
+    }
+  }

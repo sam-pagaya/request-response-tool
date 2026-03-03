@@ -1,0 +1,104 @@
+{
+    "partner": {
+      "partner_application_id": "{{partner_app_id}}",
+      "application_type": "EP",
+      "call_type": "NEW APPLICATION",
+      "decline_reasons": [
+        "string"
+      ]
+    },
+    "applicants": {
+      "applicants_number": 2,
+      "main_applicant": {
+        "pii": {
+          "first_name": "{{first_name}}",
+          "last_name": "{{last_name}}",
+          "address": "{{address}}",
+          "address_unit_number": "2",
+          "age": 30,
+          "city": "{{city}}",
+          "state": "{{state}}",
+          "zip": "{{zip}}",
+          "dob": "{{dob}}",
+          "ssn": "{{ssn}}"
+        },
+        "income": [
+          {
+            "amount": "{{income_amount}}",
+            "frequency": "MONTHLY_INCOME"
+          }
+        ]
+      },
+      "co_applicant": {
+        "pii": {
+          "first_name": "{{co_first_name}}",
+          "last_name": "{{co_last_name}}",
+          "address": "{{co_address}}",
+          "address_unit_number": "2",
+          "age": 30,
+          "city": "{{co_city}}",
+          "state": "{{co_state}}",
+          "zip": "{{co_zip}}",
+          "dob": "{{co_dob}}",
+          "ssn": "{{co_ssn}}"
+        },
+        "income": [
+          {
+            "amount": "{{co_applicant_income_amount}}",
+            "frequency": "MONTHLY_INCOME"
+          }
+        ]
+      }
+    },
+    "vehicle": {
+      "trim": "string",
+      "year": "{{year}}",
+      "vin": "string",
+      "model": "SENTRA",
+      "mileage": "{{mileage}}",
+      "make": "NISSAN",
+      "wholesale_value": "{{wholesale_value}}",
+      "age": 9,
+      "retail_value": 15916,
+      "status": "USED"
+    },
+    "usury_data": {
+      "max_usury_rate": 29.99
+    },
+    "requested_terms": {
+      "amount": "{{requested_loan_amount}}",
+      "interest_rate": "{{interest_rate}}",
+      "term": "{{requested_term_amount}}"
+    },
+    "deal_structure": {
+      "trade_in_value": 0,
+      "cash_down": 600,
+      "sales_price": 0,
+      "sales_tax": 0,
+      "financing_fees": {
+        "total_fees": 0,
+        "tax_title_license_fee": 0,
+        "document_fee": 0
+      },
+      "net_trade": 0,
+      "rebate": "0",
+      "total_backend_amount": 0,
+      "vsc_amount": 0,
+      "warranty_amount": 0,
+      "gap_amount": 0,
+      "other_backend_products": [
+        {
+          "amount": 0,
+          "name": "string"
+        }
+      ]
+    },
+    "dealership": {
+      "dealership_id": "string",
+      "dealership_name": "string",
+      "dealership_group": "string",
+      "dealership_risk_rank": "string",
+      "dealership_state": "LA",
+      "dealership_type": "INDEPENDENT"
+    }
+  }

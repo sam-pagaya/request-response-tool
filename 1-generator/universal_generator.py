@@ -36,7 +36,11 @@ def fill_template(template_str, pii_row, mapping, co_pii_row=None):
     # 3. Handle Randomized Logic
     for placeholder, rules in mapping.get("randomized", {}).items():
         if rules["type"] == "int":
-            val = str(random.randint(rules["range"][0], rules["range"][1]))
+            lo, hi = int(rules["range"][0]), int(rules["range"][1])
+            val = str(random.randint(lo, hi))
+        elif rules["type"] == "float":
+            lo, hi = float(rules["range"][0]), float(rules["range"][1])
+            val = str(round(random.uniform(lo, hi), 2))
         elif rules["type"] == "choice":
             val = str(random.choice(rules["options"]))
         elif rules["type"] == "string_digits":
@@ -56,6 +60,7 @@ def generate_requests(project_name, count=10):
     
     final_output = []
     for _ in range(count):
+        # Main applicant and co-applicant: two different rows from CSV
         if len(df) < 2:
             pii_row = co_pii_row = df.sample(n=1).iloc[0]
         else:

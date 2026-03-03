@@ -23,7 +23,8 @@ def get_partner_id_from_request(item):
             req_obj = item
     if not req_obj:
         return None, None
-    partner = (req_obj.get("application_data") or {}).get("partner") or {}
+    # Request body has "partner" at top level; response has "application_data.partner_application_id"
+    partner = req_obj.get("partner") or (req_obj.get("application_data") or {}).get("partner") or {}
     pid = partner.get("partner_application_id")
     if pid is not None:
         pid = str(pid).strip()
@@ -108,11 +109,26 @@ def match_and_export(requests_path, responses_path, output_excel_path=None):
     return output_excel_path
 
 
+def resolve_path(path):
+    """If path doesn't exist, try relative to repo root (parent of 3-matcher)."""
+    if os.path.isfile(path):
+        return path
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    alt = os.path.join(repo_root, path)
+    return alt if os.path.isfile(alt) else path
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: python match_requests_responses.py <requests.json> <responses.json> [output.xlsx]")
         sys.exit(1)
-    requests_path = sys.argv[1]
-    responses_path = sys.argv[2]
+    requests_path = resolve_path(sys.argv[1])
+    responses_path = resolve_path(sys.argv[2])
+    if not os.path.isfile(requests_path):
+        print(f"Error: Requests file not found: {sys.argv[1]}", file=sys.stderr)
+        sys.exit(1)
+    if not os.path.isfile(responses_path):
+        print(f"Error: Responses file not found: {sys.argv[2]}", file=sys.stderr)
+        sys.exit(1)
     output_path = sys.argv[3] if len(sys.argv) > 3 else None
     match_and_export(requests_path, responses_path, output_path)

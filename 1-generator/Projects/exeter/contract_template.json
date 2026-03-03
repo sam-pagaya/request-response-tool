@@ -1,0 +1,48 @@
+{
+  "partner": {
+    "partner_application_id": "{{partner_application_id}}",
+    "offer_id": "{{offer_id}}",
+    "contract_date": "{{contract_date}}"
+  },
+  "applicants": {
+    "applicants_number": 1,
+    "main_applicant": {
+      "income": [
+        {
+          "amount": "{{income_amount}}",
+          "type": "main_applicant_type_test",
+          "frequency": "MONTHLY_INCOME",
+          "income_verified": true
+        }
+      ]
+    }
+  },
+  "vehicle": {
+    "trim": "trim_test",
+    "year": "{{vehicle_year}}",
+    "vin": "test_vin",
+    "model": "SENTRA",
+    "mileage": "{{vehicle_mileage}}",
+    "make": "NISSAN"
+  },
+  "terms": {
+    "loan_amount": "{{loan_amount}}",
+    "interest_rate": "{{interest_rate}}",
+    "term": "{{term}}",
+    "monthly_payment": "{{monthly_payment}}"
+  },
+  "deal_structure": {
+    "cash_down": "{{cash_down}}",
+    "sales_price": "{{sales_price}}",
+    "net_trade": 0,
+    "rebate": 0,
+    "total_backend_amount": "{{total_backend_amount}}",
+    "warranty_amount": 0,
+    "wholesale_value": "{{wholesale_value}}",
+    "gap_amount": 0
+  },
+  "economics": {
+    "discount": "{{discount}}",
+    "fees": "{{fees}}"
+  }
+}

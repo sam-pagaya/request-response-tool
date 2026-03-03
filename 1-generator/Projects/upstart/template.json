@@ -1,0 +1,75 @@
+{
+  "application_data": {
+    "main_applicant": {
+      "pii": {
+        "first_name": "{{first_name}}",
+        "last_name": "{{last_name}}",
+        "city": "{{city}}",
+        "zip": "{{zip}}",
+        "state": "{{state}}",
+        "dob": "{{dob}}",
+        "address": "{{address}}"
+      },
+      "income": [
+        {
+          "frequency": "MONTHLY",
+          "type": "EE",
+          "income_verified": true,
+          "amount": "{{income_amount}}",
+          "currency": "USD"
+        }
+      ],
+      "residence_payment": 1500,
+      "residence_type": null,
+      "cash_advance": "3",
+      "employment_status": "TEMP",
+      "membership_type": "guest",
+      "prior_loans_data": [
+        {
+          "loan_amount": 7000.0,
+          "status": "open",
+          "max_dpd": 7,
+          "issue_date": "2022-02-13",
+          "monthly_payment": 256.4,
+          "balance": 4598,
+          "asset_class": "{{random_asset}}",
+          "term": 36,
+          "partner_application_id": "1234567890"
+        }
+      ]
+    },
+    "partner": {
+      "loan_purpose": "A58",
+      "decline_reason": ["SAT"],
+      "partner_application_id": "{{partner_app_id}}",
+      "user_flow": "CYR"
+    }
+  },
+  "requested_loan_data": {
+    "terms": {
+      "loan_amount": "{{loan_amount}}",
+      "term": ["{{term}}"]
+    },
+    "economics": {
+      "discounts": [
+        {
+          "discount_name": "DPRC",
+          "discount_type": null,
+          "discount_amount": null
+        }
+      ],
+      "fees": [
+        {
+          "fee_name": "Origination",
+          "fee_type": "Percentage",
+          "fee_amount": 2
+        }
+      ]
+    }
+  },
+  "marketing_referral_source_data": {
+    "campaign_id": "7800",
+    "referral_source": null,
+    "offer_code": null
+  }
+}

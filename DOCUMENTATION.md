@@ -81,3 +81,23 @@ The Matcher script performs a logical "Inner Join" between the initial generated
 If you need to match data from a previous session, you can point the matcher at a specific file in the `/archive` folder:
 ```bash
 python 3-matcher/matcher.py 1-generator/requests.json 2-archiver/archive/TIMESTAMPED_FILE.json
+```
+
+---
+
+## 5. Contract Builder (`/1-generator/build_contracts.py`)
+
+Builds contract-application payloads from archived approved responses. Uses project-specific config under `1-generator/Projects/<project>/`:
+
+* **`contract_template.json`** – Contract call JSON with `{{placeholders}}` for values from the response or defaults.
+* **`contract_mapping.json`** – `response_paths` (placeholder → dot path into each archive item’s `response`), `defaults` (placeholder → value when not in response), and `numeric_fields` (keys to coerce to int/float).
+
+**Usage:**
+```bash
+python build_contracts.py <project_name> <archive_file> [--output <path>]
+```
+Example: after Postman runs and results are archived, run:
+```bash
+python build_contracts.py exeter 2-archiver/archive/2026-02-19T14-23-09-896Z_all_approved_results.json --output contract_calls_exeter.json
+```
+Output is a single JSON file: an array of contract call objects ready to send.

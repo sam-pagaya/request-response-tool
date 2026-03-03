@@ -1,0 +1,39 @@
+{
+  "response_paths": {
+    "{{partner_application_id}}": "application_data.partner_application_id",
+    "{{offer_id}}": "offers_data.offer_decision.pagaya_offer_id",
+    "{{loan_amount}}": "offers_data.0.terms.amount",
+    "{{interest_rate}}": "offers_data.0.terms.interest_rate",
+    "{{term}}": "offers_data.0.terms.term",
+    "{{monthly_payment}}": "offers_data.0.terms.payment",
+    "{{discount}}": "offers_data.0.economics.discount",
+    "{{fees}}": "offers_data.0.economics.flat_fee",
+    "{{cash_down}}": "application_data.request_data.request_down_payment",
+    "{{total_backend_amount}}": "application_data.request_data.request_total_backend_amount"
+  },
+  "request_paths": {
+    "{{vehicle_year}}": "vehicle.year",
+    "{{vehicle_mileage}}": "vehicle.mileage",
+    "{{wholesale_value}}": "vehicle.wholesale_value",
+    "{{income_amount}}": "applicants.main_applicant.income.0.amount"
+  },
+  "defaults": {
+    "{{contract_date}}": "2024-09-08",
+    "{{sales_price}}": 5000
+  },
+  "numeric_fields": [
+    "loan_amount",
+    "interest_rate",
+    "term",
+    "monthly_payment",
+    "discount",
+    "fees",
+    "cash_down",
+    "total_backend_amount",
+    "sales_price",
+    "amount",
+    "year",
+    "mileage",
+    "wholesale_value"
+  ]
+}
